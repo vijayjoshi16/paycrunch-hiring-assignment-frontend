@@ -1,0 +1,21 @@
+.video_card {
+  background-color: rgba(223, 223, 223, 0.589);
+  padding: 10px;
+  margin: 10px;
+  transition: transform 0.5s;
+  border-radius: 15px;
+}
+
+.video_img {
+  width: 80%;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.video_content {
+  text-align: left;
+}
+
+.video_card:hover {
+  transform: scale(1.025);
+}

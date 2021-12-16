@@ -1,5 +1,6 @@
 import { Grid } from '@material-ui/core';
 import { useEffect, useState } from 'react';
+import VideoCard from '../VideoCard/VideoCard';
 import './Explore.css';
 
 const Explore = ()=>{
@@ -8,7 +9,6 @@ const Explore = ()=>{
 
     const fetchVideos = ()=>{
         setVideos([]);
-        console.log(process.env.REACT_APP_API_URL+'query/all_videos/'+pageNo*10+'/12')
         fetch(
             process.env.REACT_APP_API_URL+'query/all_videos/'+pageNo*10+'/12',
             {
@@ -19,7 +19,6 @@ const Explore = ()=>{
             }
         ).then(res=>res.json())
         .then(data=>{
-            console.log(data)
             setVideos(data.videos);
         })
     }
@@ -29,7 +28,7 @@ const Explore = ()=>{
     },[pageNo])
 
     return(
-        <div className='explore_container'>
+        <div className='explore_container' id='explore'>
             <h2>EXPLORE RECENTLY FETCHED VIDEOS</h2>
             {
                 videos.length!=0
@@ -41,14 +40,7 @@ const Explore = ()=>{
                                 <Grid 
                                 
                                 item xs={12} sm={6} md={4} lg={3}>
-                                <div
-                                className="video_card">
-                                    <img
-                                    className="video_img" 
-                                    src={video.thumbnail} />
-                                    <h3 className="video_content">{video.title.slice(0, 25) + (video.title.length > 25 ? "..." : "")}</h3>
-                                    <p className="video_content">{video.description.slice(0, 100) + (video.description.length > 100 ? "..." : "")}</p>
-                                    </div>
+                                <VideoCard video={video}/>
                                 </Grid>
                             )
                         })

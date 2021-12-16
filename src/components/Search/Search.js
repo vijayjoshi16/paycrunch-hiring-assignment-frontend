@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './Search.css';
 import { successToast, errorToast } from '../toast';
 import { Grid } from '@material-ui/core';
+import VideoCard from '../VideoCard/VideoCard';
 
 export default function Search(){
     const [searchResults, setSearchResults] = useState([]);
@@ -38,7 +39,6 @@ export default function Search(){
                 successToast(result.message);
                 setSearchResults(result.videos);
                 setLimits([0,Math.min(12,result.videos.length)]);
-                console.log(result)
             }else{
                 if(result.message!=="Success")
                 errorToast(result.message);
@@ -49,7 +49,7 @@ export default function Search(){
     }
 
     return(
-        <div className="search_container">
+        <div className="search_container" id="search">
             <h2>SEARCH BASED ON YOUR PREFERNCE</h2>
             <TextField
             variant="filled"
@@ -83,17 +83,8 @@ export default function Search(){
                     searchResults.slice(limits[0],limits[1])
                     .map(video=>{
                         return(
-                                <Grid 
-                                
-                                item xs={12} sm={6} md={4} lg={3}>
-                                <div
-                                className="video_card">
-                                    <img
-                                    className="video_img" 
-                                    src={video.thumbnail} />
-                                    <h3 className="video_content">{video.title.slice(0, 25) + (video.title.length > 25 ? "..." : "")}</h3>
-                                    <p className="video_content">{video.description.slice(0, 100) + (video.description.length > 100 ? "..." : "")}</p>
-                                    </div>
+                                <Grid item xs={12} sm={6} md={4} lg={3}>
+                                    <VideoCard video={video}/>
                                 </Grid>
                             )
                     })

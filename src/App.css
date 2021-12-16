@@ -1,3 +1,20 @@
 .App {
   text-align: center;
 }
+
+.pagination_btn {
+  background-color: rgba(223, 223, 223, 0.589);
+  height: 50px;
+  margin: 20px;
+  border-radius: 5px;
+  width: 100px;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.pagination_btn:hover {
+  transform: scale(1.25);
+}
