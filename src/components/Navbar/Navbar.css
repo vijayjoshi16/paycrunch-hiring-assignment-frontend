@@ -10,7 +10,7 @@
 }
 
 .navbar_container:hover {
-  transform: scale(1.05);
+  transform: scale(1.025);
 }
 
 .navbar_item {
@@ -19,4 +19,8 @@
   display: inline;
   margin-top: 10px;
   cursor: pointer;
+}
+
+.navbar_menu {
+  padding-top: 10px;
 }
