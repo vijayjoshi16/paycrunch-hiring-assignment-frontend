@@ -1,3 +1,25 @@
+<h1 align="center">PayCrunch Youtube API Assignment - Frontend</h1>
+
+## Deployed web app Link: 
+https://paycrunch-youtube-api.netlify.app/
+
+## Steps to set up the project
+
+- Clone this project: 
+`git clone https://github.com/vijayjoshi16/paycrunch-hiring-assignment-frontend.git`
+
+- Change the current working directory:
+`cd paycrunch-hiring-assignment-frontend`
+
+- Create a .env file and paste the Backend API Link as follows
+`REACT_APP_API_URL=https://paycrunch-backend-assignment.herokuapp.com/`
+
+- Install all the requires packages
+`npm install`
+
+- Start the react app
+`npm start`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
